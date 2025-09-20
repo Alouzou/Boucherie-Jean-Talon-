@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galerie - Boucherie Jean Talon | Chez Koceila</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#a83232",
+              secondary: "#2C1810",
+              accent: "#D4AF37",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .gallery-item {
+        aspect-ratio: 1;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-gray-50">
+    <nav class="bg-white shadow-lg fixed w-full z-50 top-0">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 p-1 h-12 bg-gradient-to-br from-primary to-red-600 rounded-xl shadow-lg flex items-center justify-center"
+            >
+              <img src="assets/images/logo_sans_bg.png" alt="" />
+            </div>
+            <div>
+              <h1 class="text-xl font-bold text-secondary">
+                Boucherie Jean Talon
+              </h1>
+              <p class="text-sm text-primary font-semibold">Chez Koceila</p>
+            </div>
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="index.html"
+              class="text-secondary hover:text-primary transition-colors"
+              >Accueil</a
+            >
+            <a
+              href="index.html#merguez"
+              class="text-secondary hover:text-primary transition-colors"
+              >Merguez</a
+            >
+            <a
+              href="index.html#produits"
+              class="text-secondary hover:text-primary transition-colors"
+              >Produits</a
+            >
+            <a href="#" class="text-primary font-semibold">Galerie</a>
+            <a
+              href="index.html#avis"
+              class="text-secondary hover:text-primary transition-colors"
+              >Avis</a
+            >
+            <a
+              href="index.html#contact"
+              class="text-secondary hover:text-primary transition-colors"
+              >Contact</a
+            >
+          </div>
+          <button class="md:hidden text-secondary" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+
+        <div id="mobileMenu" class="md:hidden hidden bg-white border-t">
+          <div class="py-4 space-y-3">
+            <a
+              href="index.html"
+              class="block text-secondary hover:text-primary px-4 py-2"
+              >Accueil</a
+            >
+            <a
+              href="index.html#merguez"
+              class="block text-secondary hover:text-primary px-4 py-2"
+              >Merguez</a
+            >
+            <a
+              href="index.html#produits"
+              class="block text-secondary hover:text-primary px-4 py-2"
+              >Produits</a
+            >
+            <a href="#" class="block text-primary font-semibold px-4 py-2"
+              >Galerie</a
+            >
+            <a
+              href="index.html#avis"
+              class="block text-secondary hover:text-primary px-4 py-2"
+              >Avis</a
+            >
+            <a
+              href="index.html#contact"
+              class="block text-secondary hover:text-primary px-4 py-2"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="bg-gradient-to-br from-primary via-red-700 to-red-800 text-white py-24 mt-20 relative overflow-hidden"
+    >
+      <div class="absolute inset-0 bg-black/30"></div>
+      <div class="container mx-auto px-4 text-center relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-5xl md:text-6xl font-bold mb-6">
+            Notre Vitrine d'Images
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 opacity-90">
+            Découvrez la qualité de nos produits à travers notre galerie photos
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="py-8 bg-white shadow-sm">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-center gap-4">
+          <button
+            onclick="filterImages('all')"
+            class="filter-btn bg-primary text-white px-6 py-3 rounded-full font-semibold transition-all hover:bg-red-700"
+          >
+            <i class="fas fa-th mr-2"></i>Tout voir
+          </button>
+          <button
+            onclick="filterImages('viandes')"
+            class="filter-btn bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold transition-all hover:bg-primary hover:text-white"
+          >
+            <i class="fas fa-cow mr-2"></i>Viandes
+          </button>
+          <button
+            onclick="filterImages('volailles')"
+            class="filter-btn bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold transition-all hover:bg-primary hover:text-white"
+          >
+            <i class="fas fa-drumstick-bite mr-2"></i>Volailles
+          </button>
+          <button
+            onclick="filterImages('merguez')"
+            class="filter-btn bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold transition-all hover:bg-primary hover:text-white"
+          >
+            <i class="fas fa-fire mr-2"></i>Merguez
+          </button>
+          <button
+            onclick="filterImages('epicerie')"
+            class="filter-btn bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold transition-all hover:bg-primary hover:text-white"
+          >
+            <i class="fas fa-shopping-basket mr-2"></i>Épicerie
+          </button>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div id="galleryGrid" class="gallery-grid"></div>
+
+        <div id="noImagesMessage" class="text-center py-12 hidden">
+          <div class="text-6xl text-gray-300 mb-4">
+            <i class="fas fa-image"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-600 mb-2">
+            Aucune image trouvée
+          </h3>
+          <p class="text-gray-500">Essayez un autre filtre.</p>
+        </div>
+      </div>
+    </section>
+
+    <div
+      id="imageModal"
+      class="fixed inset-0 bg-black/80 hidden z-50 flex items-center justify-center p-4"
+    >
+      <div
+        class="relative max-w-5xl max-h-screen w-full h-full flex items-center justify-center"
+      >
+        <button
+          onclick="closeModal()"
+          class="absolute top-4 right-4 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white text-xl z-20 backdrop-blur-sm transition-colors"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+
+        <button
+          onclick="previousImage()"
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white text-xl z-20 backdrop-blur-sm transition-colors"
+        >
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button
+          onclick="nextImage()"
+          class="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white text-xl z-20 backdrop-blur-sm transition-colors"
+        >
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="flex items-center justify-center w-full h-full">
+          <img
+            id="modalImage"
+            class="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+            alt=""
+          />
+        </div>
+
+        <div class="absolute bottom-4 left-4 right-4 text-center">
+          <div
+            class="bg-black/50 backdrop-blur-sm rounded-lg px-6 py-3 text-white"
+          >
+            <p id="modalImageTitle" class="font-semibold text-lg mb-1"></p>
+            <p id="modalImageCounter" class="text-sm opacity-80"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-12 bg-primary text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h3 class="text-2xl font-bold mb-4">Vous aimez ce que vous voyez ?</h3>
+        <p class="text-lg mb-6 opacity-90">
+          Venez découvrir nos produits en magasin !
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="index.html"
+            class="bg-accent text-secondary px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-400 transition-colors"
+          >
+            <i class="fas fa-home mr-2"></i>Retour à l'accueil
+          </a>
+          <a
+            href="index.html#location"
+            class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-primary transition-colors"
+          >
+            <i class="fas fa-map-marker-alt mr-2"></i>Nous trouver
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-secondary text-white py-8">
+      <div class="container mx-auto px-4 text-center">
+        <div class="flex items-center justify-center space-x-3 mb-4">
+          <div
+            class="w-10 p-1 h-10 bg-gradient-to-br from-primary to-red-600 rounded-lg flex items-center justify-center"
+          >
+            <img src="assets/images/logo_sans_bg.png" alt="" />
+          </div>
+          <div>
+            <h3 class="font-bold">Boucherie Jean Talon</h3>
+            <p class="text-accent text-sm">Chez Koceila</p>
+          </div>
+        </div>
+        <p class="text-gray-300 mb-4">
+          1825 Rue Jean-Talon E, Montréal • +1 438 381 8181
+        </p>
+        <div class="flex justify-center space-x-4">
+          <a
+            href="#"
+            class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const imageData = [
+        {
+          src: "assets/images/merguez333.webp",
+          category: "merguez",
+          title: "Merguez artisanales",
+        },
+        {
+          src: "assets/images/1.webp",
+          category: "viandes",
+          title: "Viande fraîche premium",
+        },
+        {
+          src: "assets/images/2.webp",
+          category: "viandes",
+          title: "Sélection de bœuf",
+        },
+        {
+          src: "assets/images/3.webp",
+          category: "volailles",
+          title: "Volailles fermières",
+        },
+        {
+          src: "assets/images/4.webp",
+          category: "viandes",
+          title: "Agneau de qualité",
+        },
+        {
+          src: "assets/images/5.webp",
+          category: "merguez",
+          title: "Spécialités grillées",
+        },
+        {
+          src: "assets/images/6.webp",
+          category: "volailles",
+          title: "Poulet préparé",
+        },
+        {
+          src: "assets/images/7.webp",
+          category: "viandes",
+          title: "Découpe traditionnelle",
+        },
+        {
+          src: "assets/images/8.webp",
+          category: "epicerie",
+          title: "Épices et condiments",
+        },
+        {
+          src: "assets/images/9.webp",
+          category: "viandes",
+          title: "Viande hachée fraîche",
+        },
+        {
+          src: "assets/images/10.webp",
+          category: "viandes",
+          title: "Steaks premium",
+        },
+        {
+          src: "assets/images/11.webp",
+          category: "volailles",
+          title: "Préparations volailles",
+        },
+        {
+          src: "assets/images/12.webp",
+          category: "merguez",
+          title: "Saucisses maison",
+        },
+        {
+          src: "assets/images/13.webp",
+          category: "epicerie",
+          title: "Fruits et légumes",
+        },
+        {
+          src: "assets/images/14.webp",
+          category: "viandes",
+          title: "Côtelettes d'agneau",
+        },
+        {
+          src: "assets/images/15.webp",
+          category: "epicerie",
+          title: "Produits d'épicerie",
+        },
+        {
+          src: "assets/images/16.webp",
+          category: "volailles",
+          title: "Spécialités de poulet",
+        },
+        {
+          src: "assets/images/17.webp",
+          category: "viandes",
+          title: "Gigot d'agneau",
+        },
+        {
+          src: "assets/images/18.webp",
+          category: "epicerie",
+          title: "Produits du terroir",
+        },
+      ];
+
+      let currentFilter = "all";
+      let currentImageIndex = 0;
+      let filteredImages = [...imageData];
+
+      document.addEventListener("DOMContentLoaded", function () {
+        loadImages();
+      });
+
+      function loadImages() {
+        const galleryGrid = document.getElementById("galleryGrid");
+        const noImagesMessage = document.getElementById("noImagesMessage");
+
+        galleryGrid.innerHTML = "";
+
+        if (filteredImages.length === 0) {
+          galleryGrid.classList.add("hidden");
+          noImagesMessage.classList.remove("hidden");
+          return;
+        }
+
+        galleryGrid.classList.remove("hidden");
+        noImagesMessage.classList.add("hidden");
+
+        filteredImages.forEach((imageData, index) => {
+          const imageDiv = document.createElement("div");
+          imageDiv.className =
+            "gallery-item bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer";
+
+          imageDiv.innerHTML = `
+            <div class="relative overflow-hidden h-full">
+              <img src="${imageData.src}" 
+                   alt="${imageData.title}" 
+                   class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                   loading="lazy"
+                   onerror="this.parentElement.innerHTML='<div class=\\'flex items-center justify-center h-full bg-gray-200 text-gray-500\\' ><i class=\\'fas fa-image text-4xl\\' ></i></div>'">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                <div class="absolute bottom-4 left-4 text-white">
+                  <h3 class="font-bold text-lg">${imageData.title}</h3>
+                  <p class="text-sm opacity-80">${getCategoryDisplayName(
+                    imageData.category
+                  )}</p>
+                </div>
+                <div class="absolute top-4 right-4">
+                  <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <i class="fas fa-expand-alt text-white"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+
+          imageDiv.addEventListener("click", () => openModal(index));
+          galleryGrid.appendChild(imageDiv);
+        });
+      }
+      function filterImages(category) {
+        currentFilter = category;
+
+        document.querySelectorAll(".filter-btn").forEach((btn) => {
+          btn.classList.remove("bg-primary", "text-white");
+          btn.classList.add("bg-gray-200", "text-gray-700");
+        });
+
+        const clickedBtn = document.querySelector(
+          `[onclick="filterImages('${category}')"]`
+        );
+        if (clickedBtn) {
+          clickedBtn.classList.remove("bg-gray-200", "text-gray-700");
+          clickedBtn.classList.add("bg-primary", "text-white");
+        }
+
+        if (category === "all") {
+          filteredImages = [...imageData];
+        } else {
+          filteredImages = imageData.filter((img) => img.category === category);
+        }
+
+        loadImages();
+      }
+
+      function openModal(index) {
+        currentImageIndex = index;
+        const modal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+        const modalTitle = document.getElementById("modalImageTitle");
+        const modalCounter = document.getElementById("modalImageCounter");
+
+        modal.classList.remove("hidden");
+        modalImage.src = filteredImages[index].src;
+        modalImage.alt = filteredImages[index].title;
+        modalTitle.textContent = filteredImages[index].title;
+        modalCounter.textContent = `${index + 1} / ${filteredImages.length}`;
+
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        document.getElementById("imageModal").classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % filteredImages.length;
+        openModal(currentImageIndex);
+      }
+
+      function previousImage() {
+        currentImageIndex =
+          (currentImageIndex - 1 + filteredImages.length) %
+          filteredImages.length;
+        openModal(currentImageIndex);
+      }
+
+      function getCategoryDisplayName(category) {
+        const names = {
+          viandes: "Viandes",
+          volailles: "Volailles",
+          merguez: "Merguez",
+          epicerie: "Épicerie",
+        };
+        return names[category] || category;
+      }
+
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        mobileMenu.classList.toggle("hidden");
+      }
+
+      document.addEventListener("keydown", function (e) {
+        const modal = document.getElementById("imageModal");
+        if (!modal.classList.contains("hidden")) {
+          if (e.key === "Escape") closeModal();
+          if (e.key === "ArrowLeft") previousImage();
+          if (e.key === "ArrowRight") nextImage();
+        }
+      });
+
+      document
+        .getElementById("imageModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeModal();
+        });
+    </script>
+  </body>
+</html>

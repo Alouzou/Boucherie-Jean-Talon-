@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Boucherie Jean Talon - Chez Koceila | Viandes Halal de Qualité
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#a83232",
+              secondary: "#2C1810",
+              accent: "#D4AF37",
+              green: "#22C55E",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-sans">
+    <nav class="bg-white shadow-lg fixed w-full z-50 top-0">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-gradient-to-br p-1 from-primary to-red-600 rounded-xl shadow-lg flex items-center justify-center"
+            >
+              <img src="assets/images/logo_sans_bg.png" alt="" />
+            </div>
+            <div>
+              <h1 class="text-xl font-bold text-secondary">
+                Boucherie Jean Talon
+              </h1>
+              <p class="text-sm text-primary font-semibold">Chez Koceila</p>
+            </div>
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#accueil"
+              class="text-secondary hover:text-primary transition-colors"
+              >Accueil</a
+            >
+            <a
+              href="#merguez"
+              class="text-secondary hover:text-primary transition-colors"
+              >Merguez</a
+            >
+            <a
+              href="#produits"
+              class="text-secondary hover:text-primary transition-colors"
+              >Produits</a
+            >
+            <a
+              href="gallerie.html"
+              class="text-secondary hover:text-primary transition-colors"
+              >Images</a
+            >
+            <a
+              href="#about"
+              class="text-secondary hover:text-primary transition-colors"
+              >À Propos</a
+            >
+            <a
+              href="#avis"
+              class="text-secondary hover:text-primary transition-colors"
+              >Avis</a
+            >
+            <a
+              href="#contact"
+              class="text-secondary hover:text-primary transition-colors"
+              >Contact</a
+            >
+          </div>
+          <button class="md:hidden text-secondary" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+
+        <div id="mobileMenu" class="md:hidden hidden bg-white border-t">
+          <div class="py-4 space-y-3">
+            <a
+              href="#accueil"
+              class="block text-secondary hover:text-primary px-4 py-2"
+              >Accueil</a
+            >
+            <a
+              href="#merguez"
+              class="block text-secondary hover:text-primary px-4 py-2"
+              >Merguez</a
+            >
+            <a
+              href="#produits"
+              class="block text-secondary hover:text-primary px-4 py-2"
+              >Produits</a
+            >
+            <a
+              href="#about"
+              class="block text-secondary hover:text-primary px-4 py-2"
+              >À Propos</a
+            >
+            <a
+              href="#avis"
+              class="block text-secondary hover:text-primary px-4 py-2"
+              >Avis</a
+            >
+            <a
+              href="#contact"
+              class="block text-secondary hover:text-primary px-4 py-2"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      id="accueil"
+      class="bg-gradient-to-br from-primary to-red-800 text-white py-64 mt-20 relative overflow-hidden"
+      style="
+        background-image: url('assets/images/10c.webp');
+        background-size: cover;
+        opacity: 1;
+        background-position: center;
+      "
+    >
+      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="container mx-auto px-4 text-center relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-5xl md:text-7xl font-bold mb-4">
+            Boucherie Jean Talon
+          </h1>
+          <p class="text-2xl md:text-3xl mb-6 opacity-90 font-semibold">
+            Chez Koceila
+          </p>
+          <p class="text-xl md:text-2xl mb-8 opacity-90">
+            Viandes artisanales & spécialités maghrébines
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onclick="scrollToSection('produits')"
+              class="bg-accent text-gray-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-400 transition-colors"
+            >
+              Voir nos produits
+            </button>
+            <button
+              onclick="scrollToSection('contact')"
+              class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-primary transition-colors"
+            >
+              Nous contacter
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <h2 class="text-3xl font-bold text-secondary mb-6">
+              À propos de nous
+            </h2>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+              À la Boucherie Jean Talon, nous proposons des viandes halal
+              artisanales, des produits frais et savoureux, ainsi qu'un éventail
+              de spécialités maghrébines. Notre priorité : qualité, authenticité
+              et service personnalisé.
+            </p>
+            <div class="flex items-center space-x-4">
+              <div
+                class="w-16 h-16 bg-primary rounded-full flex items-center justify-center"
+              >
+                <i class="fas fa-hand-holding-heart text-white text-2xl"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-secondary">
+                  Service personnalisé
+                </h3>
+                <p class="text-gray-600">
+                  Conseil et expertise à votre service
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-primary text-white p-8 rounded-2xl">
+            <h2 class="text-3xl font-bold mb-6">Notre mission</h2>
+            <p class="text-lg leading-relaxed mb-6 opacity-90">
+              Notre mission est d'offrir des viandes de qualité et des produits
+              authentiques qui inspirent vos plats au quotidien. Fraîcheur,
+              savoir-faire et passion sont au cœur de notre engagement.
+            </p>
+            <div class="flex items-center space-x-4">
+              <div
+                class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm"
+              >
+                <i class="fas fa-star text-white text-2xl"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg">Excellence & Tradition</h3>
+                <p class="opacity-80">
+                  Des produits d'exception depuis toujours
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="merguez" class="py-20 bg-gray-50 relative">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h1 class="text-2xl font-bold text-secondary mb-2">
+            Nos incontournables
+          </h1>
+          <h2 class="text-4xl font-bold text-secondary mb-4">
+            Des merguez pour tous les goûts
+          </h2>
+
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Découvrez notre sélection de merguez artisanales, préparées avec les
+            meilleures viandes et épices authentiques
+          </p>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto">
+          <div
+            class="carousel-container overflow-hidden rounded-2xl shadow-2xl"
+          >
+            <div
+              class="carousel-slides flex transition-transform duration-500 ease-in-out"
+              id="carouselSlides"
+            >
+              <div class="carousel-slide min-w-full relative">
+                <div class="grid md:grid-cols-2 bg-white">
+                  <div
+                    class="h-80 md:h-96 bg-gradient-to-br from-red-100 to-red-200 flex items-center justify-center"
+                    style="
+                      background-image: url('assets/images/merguez-mix.webp');
+                      background-size: cover;
+                      opacity: 1;
+                      background-position: center;
+                    "
+                  ></div>
+                  <div class="p-8 flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold text-secondary mb-4">
+                      Merguez de bœuf
+                    </h3>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                      Puissance et saveur, nos merguez de bœuf pour un plaisir
+                      intense. Préparées avec du bœuf halal de première qualité
+                      et un mélange d'épices traditionnel.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                      <div class="flex text-accent text-xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <span class="text-gray-600">Produit phare</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-slide min-w-full relative">
+                <div class="grid md:grid-cols-2 bg-white">
+                  <div
+                    class="h-80 md:h-96 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center"
+                    style="
+                      background-image: url('assets/images/merguez-agn.webp');
+                      background-size: cover;
+                      opacity: 1;
+                      background-position: center;
+                    "
+                  ></div>
+                  <div class="p-8 flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold text-secondary mb-4">
+                      Merguez d'agneau
+                    </h3>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                      L'agneau à l'état pur, en merguez délicatement épicées. Un
+                      goût raffiné et authentique qui vous transportera vers les
+                      saveurs du Maghreb.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                      <div class="flex text-accent text-xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <span class="text-gray-600">Spécialité maison</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-slide min-w-full relative">
+                <div class="grid md:grid-cols-2 bg-white">
+                  <div
+                    class="h-80 md:h-96 bg-gradient-to-br from-yellow-100 to-yellow-200 flex items-center justify-center"
+                    style="
+                      background-image: url('assets/images/merguez2.webp');
+                      background-size: cover;
+                      opacity: 1;
+                      background-position: center;
+                    "
+                  ></div>
+                  <div class="p-8 flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold text-secondary mb-4">
+                      Merguez de poulet
+                    </h3>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                      Pour des grillades légères, choisissez nos merguez de
+                      poulet. Moins grasses mais tout aussi savoureuses,
+                      parfaites pour toute la famille.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                      <div class="flex text-accent text-xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <span class="text-gray-600">Option légère</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            onclick="prevSlide()"
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-primary w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all z-10"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button
+            onclick="nextSlide()"
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-primary w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all z-10"
+          >
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+          <div class="flex justify-center mt-8 space-x-2">
+            <button
+              onclick="goToSlide(0)"
+              class="carousel-dot w-3 h-3 rounded-full bg-primary transition-all"
+            ></button>
+            <button
+              onclick="goToSlide(1)"
+              class="carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition-all"
+            ></button>
+            <button
+              onclick="goToSlide(2)"
+              class="carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition-all"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-3 gap-0 max-w-5xl mx-auto">
+          <div
+            class="flex flex-col md:flex-row items-center gap-4 p-6 text-center md:text-left border-b md:border-b-0 md:border-r border-gray-200"
+          >
+            <div class="flex-shrink-0">
+              <div
+                class="bg-primary rounded-full w-16 h-16 flex items-center justify-center"
+              >
+                <i class="fas fa-truck text-white text-2xl"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-bold text-xl mb-2 text-secondary">
+                Livraison gratuite
+              </h3>
+              <p class="text-gray-600">
+                Profitez de notre service de livraison gratuite pour vos
+                commandes dans un rayon de 10 km
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col md:flex-row items-center gap-4 p-6 text-center md:text-left border-b md:border-b-0 md:border-r border-gray-200"
+          >
+            <div class="flex-shrink-0">
+              <div
+                class="bg-primary rounded-full w-16 h-16 flex items-center justify-center"
+              >
+                <i class="fas fa-award text-white text-2xl"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-bold text-xl mb-2 text-secondary">
+                Viande de qualité
+              </h3>
+              <p class="text-gray-600">
+                Nous sélectionnons soigneusement des viandes de qualité
+                supérieure
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col md:flex-row items-center gap-4 p-6 text-center md:text-left"
+          >
+            <div class="flex-shrink-0">
+              <div
+                class="bg-primary rounded-full w-16 h-16 flex items-center justify-center"
+              >
+                <img
+                  src="assets/images/halal.webp"
+                  alt="Certification Halal"
+                  class="w-12 h-12 object-contain"
+                />
+              </div>
+            </div>
+            <div>
+              <h3 class="font-bold text-xl mb-2 text-secondary">
+                Certifiée Halal
+              </h3>
+              <p class="text-gray-600">
+                Tous nos produits sont certifiés halal par des organismes
+                reconnus
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="produits" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-secondary mb-4">
+            Nos produits et spécialités
+          </h2>
+          <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+            Découvrez les services de la Boucherie Jean Talon : une viande
+            fraîche et de qualité, un large choix de volailles préparées avec
+            soin, ainsi qu'une sélection de fruits, légumes et produits
+            d'épicerie maghrébins et locaux. Tout pour sublimer votre cuisine
+            avec authenticité.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-4 gap-8 mb-12">
+          <div
+            class="lg:col-span-2 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow group"
+          >
+            <div
+              class="h-64 bg-gradient-to-br from-red-100 to-red-200 flex items-center justify-center relative overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent"
+              ></div>
+              <img src="assets/images/10.webp" alt="" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-secondary mb-3">Viandes</h3>
+              <p class="text-gray-600 mb-4">
+                Chez nous, vous trouverez de la viande fraîche de qualité. Veau,
+                agneau, bœuf — tout est soigneusement sélectionné. Que vous
+                cherchiez une pièce tendre ou une coupe spéciale, on a ce qu'il
+                vous faut.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium"
+                  >Bœuf</span
+                >
+                <span
+                  class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium"
+                  >Agneau</span
+                >
+                <span
+                  class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium"
+                  >Veau</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lg:col-span-2 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow group"
+          >
+            <div
+              class="h-64 bg-gradient-to-br from-yellow-100 to-orange-200 flex items-center justify-center relative overflow-hidden"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-l from-primary/20 to-transparent"
+              ></div>
+              <img src="assets/images/3.webp" alt="" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-secondary mb-3">Volaille</h3>
+              <p class="text-gray-600 mb-4">
+                Chez nous, vous trouverez un large choix de volailles fraîches,
+                préparées avec soin. Pilons, cuisses, poitrines, poulet entier,
+                hauts de cuisses, ailes, foie, gésier ou poulet haché — il y en
+                a pour tous les goûts.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium"
+                  >Poulet</span
+                >
+                <span
+                  class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium"
+                  >Découpes variées</span
+                >
+                <span
+                  class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium"
+                  >Frais</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lg:col-span-4 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow group"
+          >
+            <div class="grid md:grid-cols-2">
+              <div
+                class="h-64 md:h-auto bg-gradient-to-br from-green-100 to-blue-200 flex items-center justify-center relative overflow-hidden"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent"
+                ></div>
+                <div class="text-center z-10">
+                  <img src="assets/images/17.webp" alt="" />
+                </div>
+              </div>
+              <div class="p-6 flex flex-col justify-center">
+                <h3 class="text-2xl font-bold text-secondary mb-3">
+                  Fruits, légumes et épicerie
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Des fruits et légumes frais, pleins de goût et choisis avec
+                  soin. Des classiques de saison aux produits exotiques, tout
+                  est là pour cuisiner ou grignoter sainement. L'épicerie est
+                  pleine de saveurs et de traditions. Vous y trouverez des
+                  produits du Maghreb — Algérie, Tunisie, Maroc — ainsi que des
+                  produits locaux de qualité.
+                </p>
+                <p class="text-gray-600 font-semibold">
+                  Tajines, bar à olives en libre-service, coin des noix : il y
+                  en a pour tous les goûts.
+                </p>
+                <div class="flex flex-wrap gap-2 mT-4">
+                  <span
+                    class="bg-green/10 text-green px-3 py-1 rounded-full text-sm font-medium"
+                    >Produits du Maghreb</span
+                  >
+                  <span
+                    class="bg-green/10 text-green px-3 py-1 rounded-full text-sm font-medium"
+                    >Fruits & Légumes</span
+                  >
+                  <span
+                    class="bg-green/10 text-green px-3 py-1 rounded-full text-sm font-medium"
+                    >Bar à olives</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="gallerie.html">
+            <button
+              class="bg-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-red-700 transition-colors"
+            >
+              <i class="fas fa-images mr-2"></i>
+
+              Voir plus de photos
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="py-20 bg-gradient-to-r from-primary to-red-800 text-white relative overflow-hidden"
+      style="
+        background-image: url('assets/images/4.webp');
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="container mx-auto px-4 text-center relative z-10">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Gardez votre calme</h2>
+        <p class="text-2xl md:text-3xl text-accent font-semibold">
+          et passez en cuisine
+        </p>
+        <div class="mt-8 flex justify-center">
+          <div class="w-24 h-1 bg-accent"></div>
+        </div>
+      </div>
+      <div class="absolute top-0 left-0 w-full h-full">
+        <div
+          class="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"
+        ></div>
+        <div
+          class="absolute bottom-10 right-10 w-16 h-16 bg-accent/20 rounded-full animate-pulse delay-1000"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/4 w-8 h-8 bg-white/5 rounded-full animate-bounce"
+        ></div>
+      </div>
+    </section>
+
+    <section id="avis" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-secondary mb-4">
+            Découvrez ce que nos clients disent de nous
+          </h2>
+          <p class="text-xl text-gray-600">
+            La satisfaction de nos clients est notre plus belle récompense
+          </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto mb-12">
+          <div class="bg-gray-50 rounded-xl p-8 text-center">
+            <div class="mb-6">
+              <i class="fab fa-google text-4xl text-blue-600 mb-4"></i>
+              <h3 class="text-2xl font-bold text-secondary mb-2">
+                Avis Google
+              </h3>
+              <p class="text-gray-600">
+                Retrouvez tous nos avis clients authentiques
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mt-8">
+              <div class="bg-white rounded-lg p-6 shadow-lg">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg"
+                  >
+                    A
+                  </div>
+                  <div class="ml-3 text-left">
+                    <div class="font-semibold text-secondary">Nesrine M.</div>
+                    <div class="flex text-yellow-500 text-sm">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  "Je recommande fortement cette boucherie 👌 ! Ils vendent les
+                  meilleures merguez au Canada. Tous leurs produits sont
+                  excellents, et leur service est tout simplement impeccable…"
+                </p>
+                <div class="mt-4 text-xs text-gray-400">Il y a 2 semaines</div>
+              </div>
+
+              <div class="bg-white rounded-lg p-6 shadow-lg">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg"
+                  >
+                    F
+                  </div>
+                  <div class="ml-3 text-left">
+                    <div class="font-semibold text-secondary">Patrick B.</div>
+                    <div class="flex text-yellow-500 text-sm">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  "Je me cherchais de bonnes merguez et grâce aux avis Google,
+                  j’ai découvert votre établissement et d’excellentes merguez
+                  bien à mon goût. J’y retournerai très bientôt pour essayer vos
+                  côtelettes d’agneaux qui semblaient très bonnes. J’ai eu un
+                  très bon service ."
+                </p>
+                <div class="mt-4 text-xs text-gray-400">Il y a 8 mois</div>
+              </div>
+
+              <div class="bg-white rounded-lg p-6 shadow-lg">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg"
+                  >
+                    M
+                  </div>
+                  <div class="ml-3 text-left">
+                    <div class="font-semibold text-secondary">Nouna Mimi</div>
+                    <div class="flex text-yellow-500 text-sm">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  "Très bonne boucherie halal ,cela fait 12ans que je suis à
+                  Montréal et j’étais toujours déçu de la qualité et du service
+                  des autres boucheries ,mais ceux là je ne les changerai plus
+                  ,j’aime bien leur viande ,fraîche et goûte bon,variété de
+                  produits et surtout les prix sont très bien affichés ce que
+                  d’autres font rarement !!! Leur service est très bien
+                  Continuez ainsi vous êtes sur le bon chemin bonne
+                  continuation"
+                </p>
+                <div class="mt-4 text-xs text-gray-400">Il y a 3 mois</div>
+              </div>
+            </div>
+
+            <!-- <div class="mt-8">
+              <div class="flex items-center justify-center space-x-4 mb-4">
+                <div class="flex text-yellow-500 text-2xl">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="text-2xl font-bold text-secondary">5/5</span>
+              </div>
+              <p class="text-gray-600">Basé sur plus de 50 avis clients</p>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gradient-to-r from-primary to-red-800 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Nos Horaires d'Ouverture</h2>
+            <p class="text-xl opacity-90">
+              Nous sommes là pour vous servir 6 jours sur 7
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+              <div class="space-y-4">
+                <div
+                  class="flex justify-between items-center py-3 border-b border-white/20"
+                >
+                  <span class="font-semibold">Samedi - Jeudi</span>
+                  <span class="font-bold text-lg">9h00 - 21h00</span>
+                </div>
+                <div
+                  class="flex justify-between items-center py-3 border-b border-white/20"
+                >
+                  <span class="font-semibold">Vendredi</span>
+                  <span class="font-bold text-lg"
+                    >9h00 - 13h00<br />14h00 - 21h00</span
+                  >
+                </div>
+              </div>
+
+              <div class="mt-8 text-center">
+                <div
+                  class="inline-flex items-center space-x-3 bg-accent/20 rounded-full px-6 py-3"
+                >
+                  <i class="fas fa-info-circle text-accent"></i>
+                  <span class="text-sm">Pause du vendredi : 13h00 - 14h00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <div
+                class="inline-block bg-white/10 backdrop-blur-sm rounded-2xl p-8"
+              >
+                <i class="fas fa-clock text-6xl mb-6 text-accent"></i>
+                <h3 class="text-2xl font-bold mb-4">Ouvert 7j/7</h3>
+                <p class="opacity-90 text-lg">
+                  Pour répondre à tous vos besoins
+                </p>
+                <div class="mt-6">
+                  <div class="inline-flex items-center space-x-2 font-semibold">
+                    <i class="fas fa-phone"></i>
+                    <span>+1 438 381 8181</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="location" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-secondary mb-4">
+            Trouvez-nous facilement
+          </h2>
+          <p class="text-gray-600">
+            Nous sommes situés au cœur de Montréal, sur la rue animée de
+            Jean-Talon Est.
+          </p>
+          <p class="text-gray-600">
+            Juste en face du métro Fabre (ligne bleue) et à proximité de
+            plusieurs arrêts de bus.
+          </p>
+        </div>
+        <div class="bg-gray-200 rounded-xl flex items-center justify-center">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5133.43348752411!2d-73.60953042245467!3d45.5482879278226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc919e2f5cf4741%3A0x732aad6c9a217b9!2sBoucherie%20jean%20talon%20inc!5e1!3m2!1sfr!2sca!4v1758390988867!5m2!1sfr!2sca"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full h-64 md:h-96"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+          >
+          </iframe>
+
+          <div
+            class="hidden h-64 md:h-96 flex items-center justify-center bg-gray-200"
+          >
+            <div class="text-center">
+              <i class="fas fa-map text-4xl text-primary mb-4"></i>
+              <p class="text-gray-600">Carte temporairement indisponible</p>
+              <a
+                href="https://maps.google.com/?q=1825+Rue+Jean-Talon+E"
+                target="_blank"
+                class="text-primary hover:underline"
+                >Voir sur Google Maps</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-secondary mb-4">Contactez-Nous</h2>
+          <p class="text-xl text-gray-600">
+            Nous sommes là pour répondre à toutes vos questions
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <h3 class="text-2xl font-bold text-secondary mb-6">
+              Envoyez-nous un message
+            </h3>
+            <form class="space-y-6" id="contactForm">
+              <div>
+                <label class="block text-gray-700 font-semibold mb-2"
+                  >Email *</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors"
+                  placeholder="votre.email@exemple.com"
+                />
+              </div>
+              <div>
+                <label class="block text-gray-700 font-semibold mb-2"
+                  >Objet *</label
+                >
+                <input
+                  type="text"
+                  name="subject"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors"
+                  placeholder="Sujet de votre message"
+                />
+              </div>
+              <div>
+                <label class="block text-gray-700 font-semibold mb-2"
+                  >Message *</label
+                >
+                <textarea
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors resize-none"
+                  placeholder="Décrivez votre demande..."
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-primary text-white py-4 rounded-lg font-semibold text-lg hover:bg-red-700 transition-colors"
+              >
+                <i class="fas fa-paper-plane mr-2"></i>
+                Envoyer le message
+              </button>
+            </form>
+          </div>
+
+          <div class="space-y-8">
+            <div class="flex items-start space-x-6">
+              <div
+                class="w-16 h-16 bg-primary rounded-full flex items-center justify-center flex-shrink-0"
+              >
+                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-secondary mb-3">
+                  Notre Adresse
+                </h3>
+                <p class="text-gray-600 text-lg leading-relaxed">
+                  1825 Rue Jean-Talon E<br />
+                  Montréal, QC H2E 1T4<br />
+                  Canada
+                </p>
+                <a
+                  href="https://tinyurl.com/5n9yw9k9"
+                  target="_blank"
+                  class="inline-flex items-center mt-4 text-primary hover:text-red-700 font-semibold"
+                >
+                  <i class="fas fa-directions mr-2"></i>
+                  Voir sur Google Maps
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-6">
+              <div
+                class="w-16 h-16 bg-primary rounded-full flex items-center justify-center flex-shrink-0"
+              >
+                <i class="fas fa-phone text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-secondary mb-3">Téléphone</h3>
+                <p class="text-gray-600 text-lg">
+                  <a
+                    href="tel:+14383818181"
+                    class="hover:text-primary transition-colors"
+                  >
+                    +1 438 381 8181
+                  </a>
+                </p>
+                <p class="text-sm text-gray-500 mt-2">
+                  Commandes et renseignements
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-6">
+              <div
+                class="w-16 h-16 bg-primary rounded-full flex items-center justify-center flex-shrink-0"
+              >
+                <i class="fas fa-envelope text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-secondary mb-3">Email</h3>
+                <p class="text-gray-600 text-lg">
+                  <a
+                    href="mailto:boucherie.jeantalon@gmail.com"
+                    class="hover:text-primary transition-colors"
+                  >
+                    Boucherie.jeantalon@gmail.com
+                  </a>
+                </p>
+                <p class="text-sm text-gray-500 mt-2">
+                  Nous répondons sous 24h
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+              <h3 class="text-xl font-bold text-secondary mb-4">Suivez-nous</h3>
+              <div class="flex space-x-4">
+                <a
+                  href="https://www.facebook.com/people/Boucherie-Jean-Talon/100065185531222/"
+                  target="_blank"
+                  class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center text-white hover:bg-pink-700 transition-colors"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-12 h-12 bg-green rounded-full flex items-center justify-center text-white hover:bg-green-600 transition-colors"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-secondary text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="md:col-span-2">
+            <div class="flex items-center space-x-3 mb-6">
+              <div
+                class="w-12 p-1 h-12 bg-gradient-to-br from-primary to-red-600 rounded-xl shadow-lg flex items-center justify-center"
+              >
+                <img src="assets/images/logo_sans_bg.png" alt="" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold">Boucherie Jean Talon</h3>
+                <p class="text-accent font-semibold">Chez Koceila</p>
+              </div>
+            </div>
+            <p class="text-gray-300 mb-6 leading-relaxed">
+              Votre boucherie halal de confiance à Montréal. Nous proposons des
+              viandes artisanales, des spécialités maghrébines et des produits
+              frais de qualité supérieure depuis des années.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://www.facebook.com/people/Boucherie-Jean-Talon/100065185531222/"
+                target="_blank"
+                class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-6 text-accent">Navigation</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#accueil"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Accueil</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#merguez"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Merguez</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#produits"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Produits</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >À Propos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#avis"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Avis</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-6 text-accent">Contact & Horaires</h4>
+            <div class="space-y-4 mb-6">
+              <div class="flex items-start space-x-3">
+                <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                <p class="text-gray-300 text-sm">
+                  1825 Rue Jean-Talon E<br />Montréal, QC H2E 1T4
+                </p>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-phone text-primary"></i>
+                <p class="text-gray-300 text-sm">+1 438 381 8181</p>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-envelope text-primary"></i>
+                <p class="text-gray-300 text-sm">
+                  Boucherie.jeantalon@gmail.com
+                </p>
+              </div>
+            </div>
+
+            <div class="text-gray-300 text-sm">
+              <p><strong>Samedi - Jeudi:</strong> 9h-21h</p>
+              <p><strong>Vendredi:</strong> 9h-13h, 14h-21h</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-white/20 mt-12 pt-8 text-center">
+          <p class="text-gray-300">
+            &copy; 2024 Boucherie Jean Talon - Chez Koceila. Tous droits
+            réservés. | Développé avec passion à Montréal
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <button
+      id="scrollTop"
+      class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full shadow-lg hover:bg-red-700 transition-all duration-300 hidden transform hover:scale-110"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      let currentSlide = 0;
+      const totalSlides = 3;
+
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        mobileMenu.classList.toggle("hidden");
+      }
+
+      function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+
+      function updateCarousel() {
+        const carousel = document.getElementById("carouselSlides");
+        const dots = document.querySelectorAll(".carousel-dot");
+
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+        dots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            dot.classList.remove("bg-gray-300");
+            dot.classList.add("bg-primary");
+          } else {
+            dot.classList.remove("bg-primary");
+            dot.classList.add("bg-gray-300");
+          }
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      }
+
+      function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        updateCarousel();
+      }
+
+      setInterval(nextSlide, 5000);
+
+      const scrollTopBtn = document.getElementById("scrollTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          scrollTopBtn.classList.remove("hidden");
+        } else {
+          scrollTopBtn.classList.add("hidden");
+        }
+      });
+
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const button = this.querySelector('button[type="submit"]');
+          const originalText = button.innerHTML;
+
+          button.innerHTML =
+            '<i class="fas fa-spinner fa-spin mr-2"></i>Envoi en cours...';
+          button.disabled = true;
+
+          setTimeout(() => {
+            alert(
+              "Merci pour votre message ! Nous vous répondrons dans les plus brefs délais."
+            );
+            this.reset();
+            button.innerHTML = originalText;
+            button.disabled = false;
+          }, 2000);
+        });
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+
+            const mobileMenu = document.getElementById("mobileMenu");
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+            }
+          }
+        });
+      });
+
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll("section").forEach((section) => {
+        section.style.opacity = "0";
+        section.style.transform = "translateY(30px)";
+        section.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+        observer.observe(section);
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        updateCarousel();
+      });
+    </script>
+  </body>
+</html>
